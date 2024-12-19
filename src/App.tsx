@@ -18,8 +18,25 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <nav className="py-6 px-4">
-        <img src="/img/logo-wire-nest.jpg" alt="Wire Nest" className="h-32 mx-auto" />
+        <img 
+          src="/img/logo-wire-nest.jpg" 
+          alt="Wire Nest" 
+          className="h-32 mx-auto transform transition-transform duration-500" 
+          style={{ animation: 'slideIn 1s forwards' }}
+        />
       </nav>
+      <style>
+        {`
+          @keyframes slideIn {
+            from {
+              transform: translateX(-100%);
+            }
+            to {
+              transform: translateX(0);
+            }
+          }
+        `}
+      </style>
 
       <main className="max-w-4xl mx-auto px-4">
         <Hero onGetStarted={scrollToForm} />
